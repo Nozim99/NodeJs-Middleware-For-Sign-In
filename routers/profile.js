@@ -2,17 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 // Middleware For Sign In
-router.use((req, res, next)=>{
-  const isLogin = false;
+const isLogin = require("../helper/isLogin");
 
-  if (isLogin)
-    next();
-  else 
-    res.send('Sahifadan ro\'yhatdan o\'ting')
-})
-// 
-
-router.get("/", (req, res) => {
+router.get("/", isLogin, (req, res) => {
   res.send("<h1>Profile sahifasi</h1>");
 });
 
