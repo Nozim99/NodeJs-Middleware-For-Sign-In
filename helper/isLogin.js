@@ -6,7 +6,7 @@
 // };
 
 function isLogin(req, res, next){
-  const isLogin = false;
+  const isLogin = 1;
 
   if(isLogin)
     next();
